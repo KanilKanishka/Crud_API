@@ -45,6 +45,4 @@ public class CustomerService {
         existingCustomer.setPhoneNumber(customer.getPhoneNumber());
         return repository.save(existingCustomer);
     }
-
-
 }
