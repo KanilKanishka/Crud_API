@@ -16,17 +16,17 @@ public class CustomerDTO {
 
     @Id
     @GeneratedValue
-    private int CustomerId;
+    private int Id;
     private String name;
-    private int NIC;
-    private String PhoneNumber;
+    private String NIC;
+    private int PhoneNumber;
 
-    public int getCustomerId() {
-        return CustomerId;
+    public int getId() {
+        return Id;
     }
 
-    public void setCustomerId(int customerId) {
-        CustomerId = customerId;
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {
@@ -37,19 +37,19 @@ public class CustomerDTO {
         this.name = name;
     }
 
-    public int getNIC() {
+    public String getNIC() {
         return NIC;
     }
 
-    public void setNIC(int NIC) {
+    public void setNIC(String NIC) {
         this.NIC = NIC;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 }

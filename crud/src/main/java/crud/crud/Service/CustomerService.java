@@ -61,6 +61,10 @@ public class CustomerService {
     public Customer getCustomerByName(String name) {
         return repository.findByName(name);
     }
+    public Customer getCustomerByNIC(String NIC) {
+        return repository.findByNIC(NIC);
+    }
+
 
     public String deleteCustomer(int id) {
         repository.deleteById(id);

@@ -36,9 +36,13 @@ public class CustomerController {
         return customerService.getCustomerById(id);
     }
 
-    @GetMapping("/customer/{name}")
+    @GetMapping("/customerBy/{name}")
     public Customer findCustomerByName(@PathVariable String name) {
         return customerService.getCustomerByName(name);
+    }
+    @GetMapping("/customerByNIC/{NIC}")
+    public Customer findCustomerByNIC(@PathVariable String NIC) {
+        return customerService.getCustomerByNIC(NIC);
     }
 
     @PutMapping("/update")
