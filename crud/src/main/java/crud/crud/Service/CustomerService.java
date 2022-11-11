@@ -11,35 +11,64 @@ import java.util.List;
 @Service
 public class CustomerService {
     @Autowired
-    private static CustomerRepository repository;
+    private CustomerRepository repository;
 
-    public static Customer saveCustomer(Customer customer) {
+    public CustomerService() {
+        super();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+    }
+
+    public Customer saveCustomer(Customer customer) {
         return repository.save(customer);
     }
 
-    public static List<Customer> saveCustomer(List<Customer> customer) {
+    public List<Customer> saveCustomer(List<Customer> customer) {
         return repository.saveAll(customer);
     }
 
-    public static List<Customer> getCustomers() {
+    public List<Customer> getCustomers() {
         return repository.findAll();
     }
 
-    public static Customer getCustomerById(int id) {
+    public Customer getCustomerById(int id) {
         return repository.findById(id).orElse(null);
     }
 
-    public static Customer getCustomerByName(String name) {
+    public Customer getCustomerByName(String name) {
         return repository.findByName(name);
     }
 
-    public static String deleteCustomer(int id) {
+    public String deleteCustomer(int id) {
         repository.deleteById(id);
         return "Customer removed !! " + id;
     }
 
-    public static Customer updateCustomer(Customer customer) {
-        Customer existingCustomer = repository.findById(customer.getCustomerId()).orElse(null);
+    public Customer updateCustomer(Customer customer) {
+        Customer existingCustomer = repository.findById(customer.getId()).orElse(null);
         existingCustomer.setName(customer.getName());
         existingCustomer.setNIC(customer.getNIC());
         existingCustomer.setPhoneNumber(customer.getPhoneNumber());

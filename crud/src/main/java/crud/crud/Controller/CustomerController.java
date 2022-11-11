@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-// @RequestMapping("/registration")
+@RequestMapping("/registration")
 public class CustomerController {
 
     @Autowired
@@ -17,37 +17,37 @@ public class CustomerController {
 
     @PostMapping(path ="/addCustomer")
     public Customer addCustomer(@RequestBody Customer customer){
-        return CustomerService.saveCustomer(customer);
+        return customerService.saveCustomer(customer);
     }
 
     @PostMapping(path ="/addCustomers")
-    public List<Customer> addMedicines(@RequestBody List<Customer> customers){
-        return CustomerService.saveCustomer(customers);
+    public List<Customer> addCustomers(@RequestBody List<Customer> customers){
+        return customerService.saveCustomer(customers);
     }
 
     @GetMapping("/Customers")
 
     public List<Customer> findAllCustomers(){
-        return CustomerService.getCustomers();
+        return customerService.getCustomers();
     }
 
-    @GetMapping("/CustomerById/{id}")
+    @GetMapping("/customerById/{id}")
     public Customer findCustomerById(@PathVariable int id) {
-        return CustomerService.getCustomerById(id);
+        return customerService.getCustomerById(id);
     }
 
-    @GetMapping("/Customer/{name}")
+    @GetMapping("/customer/{name}")
     public Customer findCustomerByName(@PathVariable String name) {
-        return CustomerService.getCustomerByName(name);
+        return customerService.getCustomerByName(name);
     }
 
     @PutMapping("/update")
     public Customer updateCustomer(@RequestBody Customer product) {
-        return CustomerService.updateCustomer(product);
+        return customerService.updateCustomer(product);
     }
 
     @DeleteMapping(path ="/delete/{id}")
     public String deleteCustomer(@PathVariable int id) {
-        return CustomerService.deleteCustomer(id);
+        return customerService.deleteCustomer(id);
     }
 }

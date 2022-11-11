@@ -16,17 +16,17 @@ public class Customer {
 
     @Id
     @GeneratedValue
-    private int CustomerId;
+    private int Id;
     private String name;
     private int NIC;
     private String PhoneNumber;
 
-    public int getCustomerId() {
-        return CustomerId;
+    public int getId() {
+        return Id;
     }
 
-    public void setCustomerId(int customerId) {
-        CustomerId = customerId;
+    public void setId(int id) {
+        Id = id;
     }
 
     public String getName() {
